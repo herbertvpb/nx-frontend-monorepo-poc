@@ -15,7 +15,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@nx-frontend-monorepo-poc/club-ui": ["libs/club-ui/src/index.ts"],
+      "@nx-frontend-monorepo-poc/club-utils": ["libs/club-utils/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

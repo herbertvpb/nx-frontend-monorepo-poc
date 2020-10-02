@@ -1,7 +1,289 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "react-home": {
+      "root": "apps/react-home",
+      "sourceRoot": "apps/react-home/src",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/web:build",
+          "options": {
+            "outputPath": "dist/apps/react-home",
+            "index": "apps/react-home/src/index.html",
+            "main": "apps/react-home/src/main.tsx",
+            "polyfills": "apps/react-home/src/polyfills.ts",
+            "tsConfig": "apps/react-home/tsconfig.app.json",
+            "assets": [
+              "apps/react-home/src/favicon.ico",
+              "apps/react-home/src/assets"
+            ],
+            "styles": [],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/react-home/src/environments/environment.ts",
+                  "with": "apps/react-home/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "react-home:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "react-home:build:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "apps/react-home/tsconfig.app.json",
+              "apps/react-home/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/react-home/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/react-home/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "react-home-e2e": {
+      "root": "apps/react-home-e2e",
+      "sourceRoot": "apps/react-home-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/react-home-e2e/cypress.json",
+            "tsConfig": "apps/react-home-e2e/tsconfig.e2e.json",
+            "devServerTarget": "react-home:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "react-home:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["apps/react-home-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/react-home-e2e/**/*"]
+          }
+        }
+      }
+    },
+    "club-ui": {
+      "root": "libs/club-ui",
+      "sourceRoot": "libs/club-ui/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/club-ui/tsconfig.lib.json",
+              "libs/club-ui/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/club-ui/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/club-ui/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "club-utils": {
+      "root": "libs/club-utils",
+      "sourceRoot": "libs/club-utils/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "libs/club-utils/tsconfig.lib.json",
+              "libs/club-utils/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/club-utils/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/club-utils/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "react-todo": {
+      "root": "apps/react-todo",
+      "sourceRoot": "apps/react-todo/src",
+      "projectType": "application",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/web:build",
+          "options": {
+            "outputPath": "dist/apps/react-todo",
+            "index": "apps/react-todo/src/index.html",
+            "main": "apps/react-todo/src/main.tsx",
+            "polyfills": "apps/react-todo/src/polyfills.ts",
+            "tsConfig": "apps/react-todo/tsconfig.app.json",
+            "assets": [
+              "apps/react-todo/src/favicon.ico",
+              "apps/react-todo/src/assets"
+            ],
+            "styles": [],
+            "scripts": [],
+            "webpackConfig": "@nrwl/react/plugins/webpack"
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/react-todo/src/environments/environment.ts",
+                  "with": "apps/react-todo/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/web:dev-server",
+          "options": {
+            "buildTarget": "react-todo:build"
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "react-todo:build:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": [
+              "apps/react-todo/tsconfig.app.json",
+              "apps/react-todo/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/react-todo/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/react-todo/jest.config.js",
+            "passWithNoTests": true
+          }
+        }
+      }
+    },
+    "react-todo-e2e": {
+      "root": "apps/react-todo-e2e",
+      "sourceRoot": "apps/react-todo-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/react-todo-e2e/cypress.json",
+            "tsConfig": "apps/react-todo-e2e/tsconfig.e2e.json",
+            "devServerTarget": "react-todo:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "react-todo:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@nrwl/linter:lint",
+          "options": {
+            "linter": "eslint",
+            "tsConfig": ["apps/react-todo-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/react-todo-e2e/**/*"]
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nrwl/react"
+  },
+  "schematics": {
+    "@nrwl/react": {
+      "application": {
+        "style": "styled-components",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "styled-components"
+      },
+      "library": {
+        "style": "styled-components",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "react-home"
 }

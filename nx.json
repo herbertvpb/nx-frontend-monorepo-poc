@@ -21,5 +21,26 @@
       }
     }
   },
-  "projects": {}
+  "projects": {
+    "react-home": {
+      "tags": []
+    },
+    "react-home-e2e": {
+      "tags": [],
+      "implicitDependencies": ["react-home"]
+    },
+    "club-ui": {
+      "tags": []
+    },
+    "club-utils": {
+      "tags": []
+    },
+    "react-todo": {
+      "tags": []
+    },
+    "react-todo-e2e": {
+      "tags": [],
+      "implicitDependencies": ["react-todo"]
+    }
+  }
 }
