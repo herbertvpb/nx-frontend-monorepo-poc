@@ -4,10 +4,9 @@ import { ReactComponent as Logo } from './logo.svg';
 
 import { Route, Link } from 'react-router-dom';
 
-import { SearchInput } from '@nx-frontend-monorepo-poc/club-ui';
-import { numberToReal } from '@nx-frontend-monorepo-poc/club-utils';
-
 import { StyledApp } from './styles';
+import { Home } from './pages/home/home';
+import { Values } from './pages/values/values';
 
 export const App = () => {
   return (
@@ -22,31 +21,12 @@ export const App = () => {
             <Link to="/">Home</Link>
           </li>
           <li>
-            <Link to="/page-2">Page 2</Link>
+            <Link to="/values">Page 2</Link>
           </li>
         </ul>
       </div>
-      <Route
-        path="/"
-        exact
-        render={() => (
-          <div>
-            <h1>Home</h1>
-            <strong>External search component:</strong>
-            <SearchInput />
-          </div>
-        )}
-      />
-      <Route
-        path="/page-2"
-        exact
-        render={() => (
-          <div>
-            <h1>Page 2</h1>
-        <span>Value formatted: {numberToReal('2.5')}</span>
-          </div>
-        )}
-      />
+      <Route path="/" exact render={Home}/>
+      <Route path="/values" exact render={Values}/>
     </StyledApp>
   );
 };

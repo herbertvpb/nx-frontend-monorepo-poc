@@ -34,7 +34,8 @@
     "react-dom": "16.13.1",
     "react-is": "16.13.1",
     "react-router-dom": "5.2.0",
-    "styled-components": "5.1.1"
+    "styled-components": "5.1.1",
+    "next": "9.5.2"
   },
   "devDependencies": {
     "@babel/core": "7.9.6",
@@ -44,6 +45,7 @@
     "@nrwl/cypress": "10.2.1",
     "@nrwl/eslint-plugin-nx": "10.2.1",
     "@nrwl/jest": "10.2.1",
+    "@nrwl/next": "^10.3.0",
     "@nrwl/react": "10.2.1",
     "@nrwl/web": "10.2.1",
     "@nrwl/workspace": "10.2.1",

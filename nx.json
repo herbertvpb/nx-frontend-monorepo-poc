@@ -41,6 +41,13 @@
     "react-todo-e2e": {
       "tags": [],
       "implicitDependencies": ["react-todo"]
+    },
+    "proxy": {
+      "tags": []
+    },
+    "proxy-e2e": {
+      "tags": [],
+      "implicitDependencies": ["proxy"]
     }
   }
 }
